@@ -218,6 +218,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Database\GameRentalDB.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
