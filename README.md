@@ -232,14 +232,21 @@ erDiagram
 
     CUSTOMERS {
         int CustomerID PK
+        int UserID FK
         string FullName
         string Phone
         string Address
         string Email
     }
 
+    CATEGORIES {
+        int CategoryID PK
+        string CategoryName
+    }
+
     GAMES {
         int GameID PK
+        int CategoryID FK
         string GameName
         string Genre
         decimal RentalPrice
@@ -249,16 +256,29 @@ erDiagram
     RENTALS {
         int RentalID PK
         int CustomerID FK
-        int GameID FK
         datetime RentalDate
         datetime ReturnDate
         decimal TotalAmount
         string Status
     }
 
+    RENTALDETAILS {
+        int RentalDetailID PK
+        int RentalID FK
+        int GameID FK
+        int Quantity
+        decimal Price
+    }
+
     USERS ||--|| CUSTOMERS : owns
+
     CUSTOMERS ||--o{ RENTALS : rents
-    GAMES ||--o{ RENTALS : included
+
+    RENTALS ||--o{ RENTALDETAILS : contains
+
+    GAMES ||--o{ RENTALDETAILS : included
+
+    CATEGORIES ||--o{ GAMES : classifies
 ```
 
 ---
