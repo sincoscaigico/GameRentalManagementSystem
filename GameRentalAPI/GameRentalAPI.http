@@ -1,0 +1,6 @@
+@GameRentalAPI_HostAddress = http://localhost:5128
+
+GET {{GameRentalAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

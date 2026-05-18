@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "GameRentalSystem\\GameRentalSystem.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "GameRentalAPI\\GameRentalAPI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

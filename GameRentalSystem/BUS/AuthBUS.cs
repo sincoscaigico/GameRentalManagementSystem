@@ -5,17 +5,50 @@ namespace GameRentalSystem.BUS
 {
     public class AuthBUS
     {
-        AuthDAL dal =
+        private AuthDAL dal =
             new AuthDAL();
 
-        public bool Register(UserDTO user)
+        // =========================
+        // REGISTER
+        // =========================
+        public bool Register(
+            UserDTO user
+        )
         {
+            // VALIDATION
+            if (
+                user.Username == "" ||
+                user.Password == "" ||
+                user.FullName == ""
+            )
+            {
+                return false;
+            }
+
             return dal.Register(user);
         }
 
-        public bool Login(string username, string password)
+        // =========================
+        // LOGIN
+        // =========================
+        public bool Login(
+            string username,
+            string password
+        )
         {
-            return dal.Login(username, password);
+            // VALIDATION
+            if (
+                username == "" ||
+                password == ""
+            )
+            {
+                return false;
+            }
+
+            return dal.Login(
+                username,
+                password
+            );
         }
     }
 }

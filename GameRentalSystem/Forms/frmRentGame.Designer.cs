@@ -55,6 +55,7 @@
             this.lblSummaryPrice = new System.Windows.Forms.Label();
             this.lblSummaryDuration = new System.Windows.Forms.Label();
             this.lblSummaryGame = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGame)).BeginInit();
@@ -105,7 +106,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(26, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 32);
+            this.label4.Size = new System.Drawing.Size(180, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "GAME RENTAL";
             // 
@@ -360,11 +361,21 @@
             this.lblSummaryGame.TabIndex = 27;
             this.lblSummaryGame.Text = "label2";
             // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(635, 313);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(35, 13);
+            this.lblStock.TabIndex = 31;
+            this.lblStock.Text = "label2";
+            // 
             // frmRentGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.lblStock);
             this.Controls.Add(this.grpSummary);
             this.Controls.Add(this.grpDuration);
             this.Controls.Add(this.lblPrice);
@@ -423,5 +434,6 @@
         private System.Windows.Forms.Label lblSummaryPrice;
         private System.Windows.Forms.Label lblSummaryDuration;
         private System.Windows.Forms.Label lblSummaryGame;
+        private System.Windows.Forms.Label lblStock;
     }
 }

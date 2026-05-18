@@ -4,7 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using GameRentalSystem.BUS;
-
+using System.Net.Http;
+using Newtonsoft.Json;
 namespace GameRentalSystem
 {
     public partial class frmGames : Form
@@ -20,15 +21,23 @@ namespace GameRentalSystem
         // =========================
         // LOAD ALL GAMES
         // =========================
-        private void LoadGames()
+        private async void LoadGames()
         {
             try
             {
-                GameBUS bus =
-                    new GameBUS();
+                HttpClient client = new HttpClient();
+
+                string url =
+                    "https://localhost:7080/api/Game";
+
+                string json =
+                    await client.GetStringAsync(url);
+
+                var games =
+                    JsonConvert.DeserializeObject<dynamic>(json);
 
                 dgvGames.DataSource =
-                    bus.GetGames();
+                    games;
 
                 dgvGames.AutoSizeColumnsMode =
                     DataGridViewAutoSizeColumnsMode.Fill;
@@ -41,9 +50,7 @@ namespace GameRentalSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    ex.Message
-                );
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -142,10 +149,10 @@ namespace GameRentalSystem
         // =========================
         // FORM LOAD
         // =========================
-        private void frmGames_Load(
-            object sender,
-            EventArgs e
-        )
+        private async void frmGames_Load(
+    object sender,
+    EventArgs e
+)
         {
             LoadGames();
 
@@ -372,18 +379,16 @@ namespace GameRentalSystem
                 .Value
                 .ToString();
 
-            string status =
-                dgvGames.SelectedRows[0]
-                .Cells["Status"]
-                .Value
-                .ToString();
+            int stock =
+    Convert.ToInt32(
+        dgvGames.SelectedRows[0]
+        .Cells["stockQuantity"]
+        .Value
+    );
 
-            if (status == "Out Of Stock")
+            if (stock <= 0)
             {
-                MessageBox.Show(
-                    "Game hiện tại đang hết hàng!"
-                );
-
+                MessageBox.Show("Game hết hàng!");
                 return;
             }
 
@@ -399,7 +404,7 @@ namespace GameRentalSystem
             decimal price =
                 Convert.ToDecimal(
                     dgvGames.SelectedRows[0]
-                    .Cells["RentalPrice"]
+                    .Cells["pricePerDay"]
                     .Value
                 );
 

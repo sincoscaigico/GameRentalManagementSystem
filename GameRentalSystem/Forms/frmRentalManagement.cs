@@ -134,8 +134,10 @@ namespace GameRentalSystem
         {
             try
             {
+                // CHECK SELECT
                 if (
-                    dgvRentingGames.SelectedRows.Count == 0
+                    dgvRentingGames.SelectedRows.Count
+                    == 0
                 )
                 {
                     MessageBox.Show(
@@ -145,6 +147,7 @@ namespace GameRentalSystem
                     return;
                 }
 
+                // CONFIRM
                 DialogResult result =
                     MessageBox.Show(
                         "Xác nhận refund game?",
@@ -160,6 +163,7 @@ namespace GameRentalSystem
                     return;
                 }
 
+                // GET RENTAL ID
                 int rentalID =
                     Convert.ToInt32(
                         dgvRentingGames
@@ -168,35 +172,20 @@ namespace GameRentalSystem
                         .Value
                     );
 
-                int gameID =
-                    Convert.ToInt32(
-                        dgvRentingGames
-                        .SelectedRows[0]
-                        .Cells["GameID"]
-                        .Value
-                    );
-
-                int quantity =
-                    Convert.ToInt32(
-                        dgvRentingGames
-                        .SelectedRows[0]
-                        .Cells["Quantity"]
-                        .Value
-                    );
-
+                // BUS
                 RentalBUS bus =
                     new RentalBUS();
 
+                // RETURN GAME
                 bus.ReturnGame(
-                    rentalID,
-                    gameID,
-                    quantity
+                    rentalID
                 );
 
                 MessageBox.Show(
                     "Refund game thành công!"
                 );
 
+                // RELOAD
                 LoadRentingGames();
             }
             catch (Exception ex)

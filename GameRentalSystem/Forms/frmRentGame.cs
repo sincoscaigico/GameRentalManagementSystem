@@ -1,33 +1,43 @@
 ﻿using GameRentalSystem.BUS;
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-
 
 namespace GameRentalSystem
 {
     public partial class frmRentGame : Form
     {
-        // DATA NHẬN TỪ frmGames
+        // =========================
+        // DATA FROM frmGames
+        // =========================
+        public int GameID = 0;
+
         public string GameName = "";
 
         public string Genre = "";
 
         public decimal Price = 0;
 
+        public int Stock = 0;
+
+        // =========================
+        // CONSTRUCTOR
+        // =========================
         public frmRentGame()
         {
             InitializeComponent();
         }
 
+        // =========================
         // FORM LOAD
+        // =========================
         private void frmRentGame_Load(
             object sender,
             EventArgs e
         )
         {
             // GAME INFO
-            lblGameName.Text = GameName;
+            lblGameName.Text =
+                GameName;
 
             lblGenre.Text =
                 "Genre: " + Genre;
@@ -35,35 +45,27 @@ namespace GameRentalSystem
             lblPrice.Text =
                 "$" + Price + " / day";
 
+            // STOCK
+            lblStock.Text =
+                "Stock: " + Stock;
+
             // DEFAULT
             rdo3Days.Checked = true;
 
             UpdateSummary();
         }
 
+        // =========================
         // UPDATE SUMMARY
+        // =========================
         private void UpdateSummary()
         {
-            int days = 3;
-
-            // CHECK RADIO
-            if (rdo7Days.Checked)
-            {
-                days = 7;
-            }
-            else if (rdo10Days.Checked)
-            {
-                days = 10;
-            }
-            else if (rdo30Days.Checked)
-            {
-                days = 30;
-            }
+            int days =
+                GetSelectedDays();
 
             decimal total =
                 Price * days;
 
-            // SUMMARY
             lblSummaryGame.Text =
                 "Game: " + GameName;
 
@@ -77,7 +79,32 @@ namespace GameRentalSystem
                 "TOTAL: $" + total;
         }
 
-        // RADIO CHANGED
+        // =========================
+        // GET SELECTED DAYS
+        // =========================
+        private int GetSelectedDays()
+        {
+            if (rdo7Days.Checked)
+            {
+                return 7;
+            }
+
+            if (rdo10Days.Checked)
+            {
+                return 10;
+            }
+
+            if (rdo30Days.Checked)
+            {
+                return 30;
+            }
+
+            return 3;
+        }
+
+        // =========================
+        // RADIO EVENTS
+        // =========================
         private void rdo3Days_CheckedChanged(
             object sender,
             EventArgs e
@@ -110,40 +137,41 @@ namespace GameRentalSystem
             UpdateSummary();
         }
 
+        // =========================
         // CONFIRM RENT
+        // =========================
         private void btnConfirmRent_Click(
-     object sender,
-     EventArgs e
- )
+            object sender,
+            EventArgs e
+        )
         {
             try
             {
-                decimal total = 0;
+                // CHECK STOCK
+                if (Stock <= 0)
+                {
+                    MessageBox.Show(
+                        "Game hết hàng!"
+                    );
 
-                // DAYS
-                if (rdo3Days.Checked)
-                {
-                    total = Price * 3;
-                }
-                else if (rdo7Days.Checked)
-                {
-                    total = Price * 7;
-                }
-                else if (rdo10Days.Checked)
-                {
-                    total = Price * 10;
-                }
-                else if (rdo30Days.Checked)
-                {
-                    total = Price * 30;
+                    return;
                 }
 
+                int days =
+                    GetSelectedDays();
+
+                decimal total =
+                    Price * days;
+
+                // BUS
                 RentalBUS bus =
                     new RentalBUS();
 
+                // RENT
                 bus.RentGame(
-                    GameName,
-                    total
+                    GameID,
+                    total,
+                    days
                 );
 
                 MessageBox.Show(
@@ -160,18 +188,27 @@ namespace GameRentalSystem
             }
         }
 
+        // =========================
+        // CANCEL
+        // =========================
         private void btnCancelRent_Click(
-    object sender,
-    EventArgs e
-)
+            object sender,
+            EventArgs e
+        )
         {
             this.Close();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        // =========================
+        // LOGOUT
+        // =========================
+        private void btnLogout_Click(
+            object sender,
+            EventArgs e
+        )
         {
             frmLogin f =
-        new frmLogin();
+                new frmLogin();
 
             f.Show();
 

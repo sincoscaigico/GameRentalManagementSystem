@@ -15,5 +15,10 @@
         public string Phone { get; set; }
 
         public string Address { get; set; }
+
+        // ADD
+        public string Role { get; set; }
+
+        public int CustomerID { get; set; }
     }
 }
