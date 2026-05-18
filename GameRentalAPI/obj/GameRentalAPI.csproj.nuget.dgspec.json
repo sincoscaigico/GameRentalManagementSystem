@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Downloads\\ltcsdl - Copy\\ltcsdl - Copy\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\ltcsdl\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Downloads\\ltcsdl - Copy\\ltcsdl - Copy\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\ltcsdl\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Downloads\\ltcsdl - Copy\\ltcsdl - Copy\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\ltcsdl\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj",
         "projectName": "GameRentalAPI",
-        "projectPath": "C:\\Users\\Administrator\\Downloads\\ltcsdl - Copy\\ltcsdl - Copy\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\ltcsdl\\GameRentalSystem\\GameRentalAPI\\GameRentalAPI.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Downloads\\ltcsdl - Copy\\ltcsdl - Copy\\GameRentalSystem\\GameRentalAPI\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\ltcsdl\\GameRentalSystem\\GameRentalAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
