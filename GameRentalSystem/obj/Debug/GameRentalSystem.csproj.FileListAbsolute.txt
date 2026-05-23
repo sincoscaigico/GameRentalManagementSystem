@@ -57,3 +57,46 @@ C:\Users\Administrator\Downloads\ltcsdl - Copy\ltcsdl - Copy\GameRentalSystem\Ga
 C:\Users\Administrator\Downloads\ltcsdl - Copy\ltcsdl - Copy\GameRentalSystem\GameRentalSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Downloads\ltcsdl - Copy\ltcsdl - Copy\GameRentalSystem\GameRentalSystem\bin\Debug\System.Web.Http.xml
 C:\Users\Administrator\Downloads\ltcsdl - Copy\ltcsdl - Copy\GameRentalSystem\GameRentalSystem\bin\Debug\Guna.UI2.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\GameRentalSystem.exe.config
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\GameRentalSystem.exe
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\GameRentalSystem.pdb
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\EntityFramework.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Guna.UI2.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Buffers.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Memory.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Web.Http.dll
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\EntityFramework.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Buffers.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Memory.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\bin\Debug\System.Web.Http.xml
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.csproj.AssemblyReference.cache
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmAddCustomer.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmCustomer.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmAddGame.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmDashboard.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmGames.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmLogin.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmRegister.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmRentalManagement.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.frmRentGame.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.Properties.Resources.resources
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.csproj.GenerateResource.cache
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRent.AA6D1065.Up2Date
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.exe
+C:\Users\Asus\Downloads\ltcsdl\ltcsdl\GameRentalSystem\GameRentalSystem\obj\Debug\GameRentalSystem.pdb

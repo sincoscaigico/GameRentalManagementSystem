@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using GameRentalSystem.BUS;
@@ -21,7 +22,234 @@ namespace GameRentalSystem
             EventArgs e
         )
         {
+            ApplyModernUI();
+
             LoadRentingGames();
+        }
+
+        // ================================
+        // MODERN UI
+        // ================================
+        private void ApplyModernUI()
+        {
+            // FORM
+            this.BackColor =
+                Color.FromArgb(15, 15, 35);
+
+            this.StartPosition =
+                FormStartPosition.CenterScreen;
+
+            // LEFT PANEL
+            panelLeft.BackColor =
+                Color.FromArgb(10, 10, 35);
+
+            // SEARCH BOX
+            txtSearchRental.BackColor =
+                Color.FromArgb(25, 25, 50);
+
+            txtSearchRental.ForeColor =
+                Color.White;
+
+            txtSearchRental.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            txtSearchRental.Font =
+                new Font(
+                    "Segoe UI",
+                    11,
+                    FontStyle.Regular
+                );
+
+            // GRID
+            StyleGrid(dgvRentingGames);
+
+            // MENU BUTTONS
+            StyleMenuButton(btnDashboard);
+            StyleMenuButton(btnGames);
+            StyleMenuButton(btnRentGame);
+            StyleMenuButton(btnCustomers);
+            StyleMenuButton(btnLogout);
+
+            // ACTION BUTTONS
+            StyleActionButton(btnSearch);
+            StyleActionButton(btnRefreshRental);
+            StyleActionButton(btnRefundGame);
+
+            // HOVER
+            AddHover(btnDashboard);
+            AddHover(btnGames);
+            AddHover(btnRentGame);
+            AddHover(btnCustomers);
+            AddHover(btnLogout);
+
+            AddHover(btnSearch);
+            AddHover(btnRefreshRental);
+            AddHover(btnRefundGame);
+        }
+
+        // ================================
+        // GRID STYLE
+        // ================================
+        private void StyleGrid(
+            DataGridView dgv
+        )
+        {
+            dgv.BackgroundColor =
+                Color.FromArgb(20, 20, 45);
+
+            dgv.BorderStyle =
+                BorderStyle.None;
+
+            dgv.EnableHeadersVisualStyles =
+                false;
+
+            dgv.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgv.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(124, 58, 237);
+
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgv.ColumnHeadersDefaultCellStyle.Font =
+                new Font(
+                    "Segoe UI",
+                    10,
+                    FontStyle.Bold
+                );
+
+            dgv.ColumnHeadersHeight =
+                42;
+
+            dgv.DefaultCellStyle.BackColor =
+                Color.FromArgb(25, 25, 50);
+
+            dgv.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgv.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(139, 92, 246);
+
+            dgv.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgv.DefaultCellStyle.Font =
+                new Font(
+                    "Segoe UI",
+                    10,
+                    FontStyle.Regular
+                );
+
+            dgv.RowHeadersVisible =
+                false;
+
+            dgv.GridColor =
+                Color.FromArgb(45, 45, 75);
+
+            dgv.RowTemplate.Height =
+                38;
+
+            dgv.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        // ================================
+        // MENU BUTTON STYLE
+        // ================================
+        private void StyleMenuButton(
+            Button btn
+        )
+        {
+            btn.FlatStyle =
+                FlatStyle.Flat;
+
+            btn.FlatAppearance.BorderSize =
+                0;
+
+            btn.BackColor =
+                Color.FromArgb(10, 10, 35);
+
+            btn.ForeColor =
+                Color.White;
+
+            btn.Font =
+                new Font(
+                    "Segoe UI",
+                    11,
+                    FontStyle.Bold
+                );
+
+            btn.Height = 52;
+
+            btn.Cursor =
+                Cursors.Hand;
+        }
+
+        // ================================
+        // ACTION BUTTON STYLE
+        // ================================
+        private void StyleActionButton(
+            Button btn
+        )
+        {
+            btn.FlatStyle =
+                FlatStyle.Flat;
+
+            btn.FlatAppearance.BorderSize =
+                0;
+
+            btn.BackColor =
+                Color.FromArgb(124, 58, 237);
+
+            btn.ForeColor =
+                Color.White;
+
+            btn.Font =
+                new Font(
+                    "Segoe UI",
+                    10,
+                    FontStyle.Bold
+                );
+
+            btn.Cursor =
+                Cursors.Hand;
+
+            btn.Height = 42;
+        }
+
+        // ================================
+        // BUTTON HOVER EFFECT
+        // ================================
+        private void AddHover(
+            Button btn
+        )
+        {
+            btn.MouseEnter +=
+                (s, e) =>
+                {
+                    btn.BackColor =
+                        Color.FromArgb(139, 92, 246);
+                };
+
+            btn.MouseLeave +=
+                (s, e) =>
+                {
+                    if (
+                        btn == btnSearch ||
+                        btn == btnRefundGame ||
+                        btn == btnRefreshRental
+                    )
+                    {
+                        btn.BackColor =
+                            Color.FromArgb(124, 58, 237);
+                    }
+                    else
+                    {
+                        btn.BackColor =
+                            Color.FromArgb(10, 10, 35);
+                    }
+                };
         }
 
         // ================================
@@ -70,7 +298,6 @@ namespace GameRentalSystem
                 DataTable dt =
                     bus.GetRentals();
 
-                // LINQ SEARCH
                 var filtered =
                     dt.AsEnumerable()
                     .Where(
@@ -134,7 +361,6 @@ namespace GameRentalSystem
         {
             try
             {
-                // CHECK SELECT
                 if (
                     dgvRentingGames.SelectedRows.Count
                     == 0
@@ -147,7 +373,6 @@ namespace GameRentalSystem
                     return;
                 }
 
-                // CONFIRM
                 DialogResult result =
                     MessageBox.Show(
                         "Xác nhận refund game?",
@@ -163,7 +388,6 @@ namespace GameRentalSystem
                     return;
                 }
 
-                // GET RENTAL ID
                 int rentalID =
                     Convert.ToInt32(
                         dgvRentingGames
@@ -172,11 +396,9 @@ namespace GameRentalSystem
                         .Value
                     );
 
-                // BUS
                 RentalBUS bus =
                     new RentalBUS();
 
-                // RETURN GAME
                 bus.ReturnGame(
                     rentalID
                 );
@@ -185,7 +407,6 @@ namespace GameRentalSystem
                     "Refund game thành công!"
                 );
 
-                // RELOAD
                 LoadRentingGames();
             }
             catch (Exception ex)
@@ -236,8 +457,8 @@ namespace GameRentalSystem
             EventArgs e
         )
         {
-            frmGames f =
-                new frmGames();
+            frmRentGame f =
+                new frmRentGame();
 
             f.Show();
 

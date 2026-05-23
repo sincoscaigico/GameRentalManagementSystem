@@ -52,6 +52,7 @@
             this.cboWishlist = new System.Windows.Forms.ComboBox();
             this.dgvTopGames = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -166,9 +167,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(26, 165);
+            this.label4.Location = new System.Drawing.Point(12, 160);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 32);
+            this.label4.Size = new System.Drawing.Size(180, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "GAME RENTAL";
             // 
@@ -252,6 +253,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(38)))));
+            this.panelLeft.Controls.Add(this.label8);
             this.panelLeft.Controls.Add(this.label4);
             this.panelLeft.Controls.Add(this.pictureBox2);
             this.panelLeft.Controls.Add(this.btnLogout);
@@ -330,6 +332,17 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "🔥 TOP TRENDING GAMES";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(15, 192);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "MANAGEMENT SYSTEM";
+            // 
             // frmGames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,5 +394,6 @@
         private System.Windows.Forms.ComboBox cboWishlist;
         private System.Windows.Forms.DataGridView dgvTopGames;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -44,7 +44,6 @@
             this.lblTotalGames = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReturnGame = new System.Windows.Forms.Button();
             this.lblTotalRentals = new System.Windows.Forms.Label();
             this.lblAvailableGames = new System.Windows.Forms.Label();
             this.lblTotalCustomers = new System.Windows.Forms.Label();
@@ -57,14 +56,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGames = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRentGame = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomers = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnRentGame = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnGames = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).BeginInit();
             this.panel2.SuspendLayout();
@@ -106,6 +106,7 @@
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label2
             // 
@@ -129,29 +130,30 @@
             this.dgvGames.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGames.BackgroundColor = System.Drawing.Color.White;
             this.dgvGames.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGames.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGames.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGames.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGames.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGames.EnableHeadersVisualStyles = false;
             this.dgvGames.Location = new System.Drawing.Point(3, 50);
             this.dgvGames.MultiSelect = false;
             this.dgvGames.Name = "dgvGames";
             this.dgvGames.ReadOnly = true;
             this.dgvGames.RowHeadersVisible = false;
+            this.dgvGames.RowHeadersWidth = 51;
             this.dgvGames.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGames.Size = new System.Drawing.Size(938, 385);
             this.dgvGames.TabIndex = 3;
@@ -164,6 +166,7 @@
             this.btnAddGame.TabIndex = 6;
             this.btnAddGame.Text = "Add Game";
             this.btnAddGame.UseVisualStyleBackColor = true;
+            this.btnAddGame.Click += new System.EventHandler(this.btnAddGame_Click);
             // 
             // btnDelete
             // 
@@ -173,6 +176,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
@@ -182,6 +186,7 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnEdit
             // 
@@ -191,6 +196,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblTotalGames
             // 
@@ -218,15 +224,6 @@
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Total games:";
-            // 
-            // btnReturnGame
-            // 
-            this.btnReturnGame.Location = new System.Drawing.Point(1046, 609);
-            this.btnReturnGame.Name = "btnReturnGame";
-            this.btnReturnGame.Size = new System.Drawing.Size(126, 45);
-            this.btnReturnGame.TabIndex = 12;
-            this.btnReturnGame.Text = "Refund game";
-            this.btnReturnGame.UseVisualStyleBackColor = true;
             // 
             // lblTotalRentals
             // 
@@ -325,81 +322,9 @@
             this.panel7.Size = new System.Drawing.Size(200, 100);
             this.panel7.TabIndex = 17;
             // 
-            // btnDashboard
-            // 
-            this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 248);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(220, 43);
-            this.btnDashboard.TabIndex = 9;
-            this.btnDashboard.Text = "Dashboard";
-            // 
-            // btnGames
-            // 
-            this.btnGames.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGames.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGames.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGames.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGames.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGames.ForeColor = System.Drawing.Color.White;
-            this.btnGames.Location = new System.Drawing.Point(0, 299);
-            this.btnGames.Name = "btnGames";
-            this.btnGames.Size = new System.Drawing.Size(220, 43);
-            this.btnGames.TabIndex = 10;
-            this.btnGames.Text = "Games";
-            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
-            // 
-            // btnRentGame
-            // 
-            this.btnRentGame.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRentGame.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRentGame.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRentGame.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRentGame.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRentGame.ForeColor = System.Drawing.Color.White;
-            this.btnRentGame.Location = new System.Drawing.Point(0, 348);
-            this.btnRentGame.Name = "btnRentGame";
-            this.btnRentGame.Size = new System.Drawing.Size(220, 45);
-            this.btnRentGame.TabIndex = 11;
-            this.btnRentGame.Text = "Rent Game";
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 399);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(220, 45);
-            this.btnCustomers.TabIndex = 12;
-            this.btnCustomers.Text = "Customers";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(-2, 450);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(222, 45);
-            this.btnLogout.TabIndex = 13;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(32, 31);
+            this.pictureBox2.Location = new System.Drawing.Point(32, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(160, 126);
             this.pictureBox2.TabIndex = 7;
@@ -410,7 +335,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(26, 165);
+            this.label4.Location = new System.Drawing.Point(12, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 32);
             this.label4.TabIndex = 8;
@@ -419,9 +344,10 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(33)))));
+            this.panelLeft.Controls.Add(this.label8);
             this.panelLeft.Controls.Add(this.btnLogout);
-            this.panelLeft.Controls.Add(this.btnCustomers);
             this.panelLeft.Controls.Add(this.btnRentGame);
+            this.panelLeft.Controls.Add(this.btnCustomers);
             this.panelLeft.Controls.Add(this.btnGames);
             this.panelLeft.Controls.Add(this.btnDashboard);
             this.panelLeft.Controls.Add(this.label4);
@@ -432,6 +358,77 @@
             this.panelLeft.Size = new System.Drawing.Size(220, 661);
             this.panelLeft.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(15, 186);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 17);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "MANAGEMENT SYSTEM";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(0, 484);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(220, 45);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnRentGame
+            // 
+            this.btnRentGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRentGame.ForeColor = System.Drawing.Color.White;
+            this.btnRentGame.Location = new System.Drawing.Point(0, 423);
+            this.btnRentGame.Name = "btnRentGame";
+            this.btnRentGame.Size = new System.Drawing.Size(220, 45);
+            this.btnRentGame.TabIndex = 11;
+            this.btnRentGame.Text = "Rent Game";
+            this.btnRentGame.UseVisualStyleBackColor = true;
+            this.btnRentGame.Click += new System.EventHandler(this.btnRentGame_Click);
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.ForeColor = System.Drawing.Color.White;
+            this.btnCustomers.Location = new System.Drawing.Point(0, 359);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(220, 45);
+            this.btnCustomers.TabIndex = 10;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
+            // btnGames
+            // 
+            this.btnGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGames.ForeColor = System.Drawing.Color.White;
+            this.btnGames.Location = new System.Drawing.Point(0, 298);
+            this.btnGames.Name = "btnGames";
+            this.btnGames.Size = new System.Drawing.Size(220, 45);
+            this.btnGames.TabIndex = 9;
+            this.btnGames.Text = "Games";
+            this.btnGames.UseVisualStyleBackColor = true;
+            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 237);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(220, 45);
+            this.btnDashboard.TabIndex = 7;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,7 +438,6 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.btnReturnGame);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRefresh);
@@ -485,7 +481,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTotalGames;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnReturnGame;
         private System.Windows.Forms.Label lblTotalRentals;
         private System.Windows.Forms.Label lblAvailableGames;
         private System.Windows.Forms.Label lblTotalCustomers;
@@ -499,13 +494,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Button btnCustomers;
-        private Guna.UI2.WinForms.Guna2Button btnRentGame;
-        private Guna.UI2.WinForms.Guna2Button btnGames;
-        private Guna.UI2.WinForms.Guna2Button btnDashboard;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnRentGame;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnGames;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Label label8;
     }
 }

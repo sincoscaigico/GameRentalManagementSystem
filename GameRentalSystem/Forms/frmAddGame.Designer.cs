@@ -58,6 +58,7 @@
             this.txtGameName = new System.Windows.Forms.TextBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
             this.picGame = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,6 +71,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(38)))));
+            this.panelLeft.Controls.Add(this.label11);
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.btnLogout);
             this.panelLeft.Controls.Add(this.btnCustomers);
@@ -88,9 +90,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(26, 173);
+            this.label1.Location = new System.Drawing.Point(12, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 32);
+            this.label1.Size = new System.Drawing.Size(180, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "GAME RENTAL";
             // 
@@ -203,6 +205,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(955, 544);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnCancel
             // 
@@ -396,6 +399,17 @@
             this.picGame.TabIndex = 0;
             this.picGame.TabStop = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(15, 200);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 17);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "MANAGEMENT SYSTEM";
+            // 
             // frmAddGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,5 +467,6 @@
         public System.Windows.Forms.NumericUpDown numStock;
         public System.Windows.Forms.NumericUpDown numPrice;
         public System.Windows.Forms.NumericUpDown numYear;
+        private System.Windows.Forms.Label label11;
     }
 }

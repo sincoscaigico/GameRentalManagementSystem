@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using GameRentalSystem.BUS;
@@ -12,6 +13,209 @@ namespace GameRentalSystem
         public frmCustomer()
         {
             InitializeComponent();
+        }
+
+        // =========================
+        // FORM LOAD
+        // =========================
+        private void frmCustomer_Load(
+            object sender,
+            EventArgs e
+        )
+        {
+            ApplyModernUI();
+
+            LoadCustomers();
+
+            LoadCustomerSummary();
+        }
+
+        // =========================
+        // MODERN UI
+        // =========================
+        private void ApplyModernUI()
+        {
+            // FORM
+            this.BackColor =
+                Color.FromArgb(15, 15, 35);
+
+            this.StartPosition =
+                FormStartPosition.CenterScreen;
+
+            // LEFT PANEL
+            panelLeft.BackColor =
+                Color.FromArgb(10, 10, 35);
+
+            // BUTTONS
+            StyleMenuButton(btnDashboard);
+            StyleMenuButton(btnGames);
+            StyleMenuButton(btnRentalManagement);
+            StyleMenuButton(btnLogout);
+
+            StyleActionButton(btnAddCustomer);
+            StyleActionButton(btnEditCustomer);
+            StyleActionButton(btnDeleteCustomer);
+            StyleActionButton(btnRefreshCustomer);
+            StyleActionButton(btnSearchCustomer);
+
+            // SEARCH BOX
+            txtSearchCustomer.BackColor =
+                Color.FromArgb(25, 25, 50);
+
+            txtSearchCustomer.ForeColor =
+                Color.White;
+
+            txtSearchCustomer.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            txtSearchCustomer.Font =
+                new Font(
+                    "Segoe UI",
+                    11,
+                    FontStyle.Regular
+                );
+
+            // GRID
+            StyleGrid(dgvCustomers);
+
+            StyleGrid(dgvCustomerSummary);
+
+            // LABELS
+            foreach (Control c in this.Controls)
+            {
+                if (c is Label)
+                {
+                    c.ForeColor =
+                        Color.White;
+
+                    c.Font =
+                        new Font(
+                            "Segoe UI",
+                            10,
+                            FontStyle.Bold
+                        );
+                }
+            }
+        }
+
+        // =========================
+        // GRID STYLE
+        // =========================
+        private void StyleGrid(
+            DataGridView dgv
+        )
+        {
+            dgv.BackgroundColor =
+                Color.FromArgb(20, 20, 45);
+
+            dgv.BorderStyle =
+                BorderStyle.None;
+
+            dgv.EnableHeadersVisualStyles =
+                false;
+
+            dgv.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgv.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(124, 58, 237);
+
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgv.ColumnHeadersDefaultCellStyle.Font =
+                new Font(
+                    "Segoe UI",
+                    10,
+                    FontStyle.Bold
+                );
+
+            dgv.DefaultCellStyle.BackColor =
+                Color.FromArgb(25, 25, 50);
+
+            dgv.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgv.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(139, 92, 246);
+
+            dgv.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgv.RowHeadersVisible = false;
+
+            dgv.GridColor =
+                Color.FromArgb(45, 45, 75);
+
+            dgv.RowTemplate.Height =
+                35;
+
+            dgv.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        // =========================
+        // MENU BUTTON
+        // =========================
+        private void StyleMenuButton(
+            Button btn
+        )
+        {
+            btn.FlatStyle =
+                FlatStyle.Flat;
+
+            btn.FlatAppearance.BorderSize =
+                0;
+
+            btn.BackColor =
+                Color.FromArgb(10, 10, 35);
+
+            btn.ForeColor =
+                Color.White;
+
+            btn.Font =
+                new Font(
+                    "Segoe UI",
+                    11,
+                    FontStyle.Bold
+                );
+
+            btn.Height = 50;
+
+            btn.Cursor =
+                Cursors.Hand;
+        }
+
+        // =========================
+        // ACTION BUTTON
+        // =========================
+        private void StyleActionButton(
+            Button btn
+        )
+        {
+            btn.FlatStyle =
+                FlatStyle.Flat;
+
+            btn.FlatAppearance.BorderSize =
+                0;
+
+            btn.BackColor =
+                Color.FromArgb(124, 58, 237);
+
+            btn.ForeColor =
+                Color.White;
+
+            btn.Font =
+                new Font(
+                    "Segoe UI",
+                    10,
+                    FontStyle.Bold
+                );
+
+            btn.Cursor =
+                Cursors.Hand;
+
+            btn.Height = 42;
         }
 
         // =========================
@@ -38,7 +242,9 @@ namespace GameRentalSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    ex.Message
+                );
             }
         }
 
@@ -58,7 +264,10 @@ namespace GameRentalSystem
                     "SELECT * FROM vw_CustomerRentalSummary";
 
                 SqlDataAdapter da =
-                    new SqlDataAdapter(query, conn);
+                    new SqlDataAdapter(
+                        query,
+                        conn
+                    );
 
                 DataTable dt =
                     new DataTable();
@@ -88,19 +297,6 @@ namespace GameRentalSystem
         }
 
         // =========================
-        // FORM LOAD
-        // =========================
-        private void frmCustomer_Load(
-            object sender,
-            EventArgs e
-        )
-        {
-            LoadCustomers();
-
-            LoadCustomerSummary();
-        }
-
-        // =========================
         // ADD CUSTOMER
         // =========================
         private void btnAddCustomer_Click(
@@ -118,6 +314,73 @@ namespace GameRentalSystem
             LoadCustomers();
 
             LoadCustomerSummary();
+        }
+
+        // =========================
+        // EDIT CUSTOMER
+        // =========================
+        private void btnEditCustomer_Click(
+            object sender,
+            EventArgs e
+        )
+        {
+            try
+            {
+                if (
+                    dgvCustomers.SelectedRows.Count == 0
+                )
+                {
+                    MessageBox.Show(
+                        "Vui lòng chọn khách hàng!"
+                    );
+
+                    return;
+                }
+
+                frmAddCustomer f =
+                    new frmAddCustomer();
+
+                f.IsEdit = true;
+
+                f.CustomerID =
+                    Convert.ToInt32(
+                        dgvCustomers.SelectedRows[0]
+                        .Cells["CustomerID"]
+                        .Value
+                    );
+
+                f.txtFullName.Text =
+                    dgvCustomers.SelectedRows[0]
+                    .Cells["FullName"]
+                    .Value.ToString();
+
+                f.txtPhone.Text =
+                    dgvCustomers.SelectedRows[0]
+                    .Cells["Phone"]
+                    .Value.ToString();
+
+                f.txtEmail.Text =
+                    dgvCustomers.SelectedRows[0]
+                    .Cells["Email"]
+                    .Value.ToString();
+
+                f.txtAddress.Text =
+                    dgvCustomers.SelectedRows[0]
+                    .Cells["Address"]
+                    .Value.ToString();
+
+                f.ShowDialog();
+
+                LoadCustomers();
+
+                LoadCustomerSummary();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message
+                );
+            }
         }
 
         // =========================
@@ -202,7 +465,7 @@ namespace GameRentalSystem
         }
 
         // =========================
-        // SEARCH CUSTOMER (LINQ)
+        // SEARCH CUSTOMER
         // =========================
         private void btnSearchCustomer_Click(
             object sender,
@@ -217,16 +480,13 @@ namespace GameRentalSystem
                 conn.Open();
 
                 string query =
-                    "SELECT " +
-                    "CustomerID, " +
-                    "FullName, " +
-                    "Phone, " +
-                    "Email, " +
-                    "Address " +
-                    "FROM Customers";
+                    "SELECT CustomerID, FullName, Phone, Email, Address FROM Customers";
 
                 SqlDataAdapter da =
-                    new SqlDataAdapter(query, conn);
+                    new SqlDataAdapter(
+                        query,
+                        conn
+                    );
 
                 DataTable dt =
                     new DataTable();
@@ -235,7 +495,6 @@ namespace GameRentalSystem
 
                 conn.Close();
 
-                // LINQ SEARCH
                 var filtered =
                     dt.AsEnumerable()
                     .Where(x =>
@@ -315,7 +574,7 @@ namespace GameRentalSystem
         }
 
         // =========================
-        // RENTAL MANAGEMENT
+        // RENT GAME
         // =========================
         private void btnRentalManagement_Click(
             object sender,
@@ -344,73 +603,6 @@ namespace GameRentalSystem
             f.Show();
 
             this.Hide();
-        }
-
-        // =========================
-        // EDIT CUSTOMER
-        // =========================
-        private void btnEditCustomer_Click(
-            object sender,
-            EventArgs e
-        )
-        {
-            try
-            {
-                if (
-                    dgvCustomers.SelectedRows.Count == 0
-                )
-                {
-                    MessageBox.Show(
-                        "Vui lòng chọn khách hàng!"
-                    );
-
-                    return;
-                }
-
-                frmAddCustomer f =
-                    new frmAddCustomer();
-
-                f.IsEdit = true;
-
-                f.CustomerID =
-                    Convert.ToInt32(
-                        dgvCustomers.SelectedRows[0]
-                        .Cells["CustomerID"]
-                        .Value
-                    );
-
-                f.txtFullName.Text =
-                    dgvCustomers.SelectedRows[0]
-                    .Cells["FullName"]
-                    .Value.ToString();
-
-                f.txtPhone.Text =
-                    dgvCustomers.SelectedRows[0]
-                    .Cells["Phone"]
-                    .Value.ToString();
-
-                f.txtEmail.Text =
-                    dgvCustomers.SelectedRows[0]
-                    .Cells["Email"]
-                    .Value.ToString();
-
-                f.txtAddress.Text =
-                    dgvCustomers.SelectedRows[0]
-                    .Cells["Address"]
-                    .Value.ToString();
-
-                f.ShowDialog();
-
-                LoadCustomers();
-
-                LoadCustomerSummary();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message
-                );
-            }
         }
 
         // =========================
